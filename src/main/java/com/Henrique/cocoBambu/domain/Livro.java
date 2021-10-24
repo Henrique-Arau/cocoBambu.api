@@ -13,6 +13,8 @@ import javax.persistence.ManyToOne;
 @Entity
 public class Livro implements Serializable{
 	
+	private static final long serialVersionUID = 1L;
+
 	private static final long serialVersionVID = 1L;
     
 	@Id
@@ -94,6 +96,10 @@ public class Livro implements Serializable{
 			return false;
 		Livro other = (Livro) obj;
 		return Objects.equals(id, other.id);
+	}
+
+	public static long getSerialversionvid() {
+		return serialVersionVID;
 	}
 
 }

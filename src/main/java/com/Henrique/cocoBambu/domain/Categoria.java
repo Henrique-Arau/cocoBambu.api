@@ -14,6 +14,8 @@ import javax.persistence.OneToMany;
 @Entity
 public class Categoria implements Serializable{
 	
+	private static final long serialVersionUID = 1L;
+
 	private static final long serialVersionVID = 1L;
 	
 	@Id
@@ -83,6 +85,10 @@ public class Categoria implements Serializable{
 			return false;
 		Categoria other = (Categoria) obj;
 		return Objects.equals(id, other.id);
+	}
+
+	public static long getSerialversionvid() {
+		return serialVersionVID;
 	}
 	
 	
