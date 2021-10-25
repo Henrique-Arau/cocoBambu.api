@@ -38,17 +38,17 @@ public class DBService {
 		Usuario l5 = new Usuario(null, "Nome usuario", "senha", "super Usuario", cat3);
 		Usuario l6 = new Usuario(null, "Nome usuario", "senha", "super Usuario", cat3);
 		
-		getUsuario().addAll(Arrays.asList(l1, l2));
-		getUsuario().addAll(Arrays.asList(l3, l4, l5));
+		//getUsuario().addAll(Arrays.asList(l1, l2));
+		//getUsuario().addAll(Arrays.asList(l3, l4, l5));
 		
 		categoriaRepository.saveAll(Arrays.asList(cat1, cat2, cat3));
 		usuarioRepository.saveAll(Arrays.asList(l1, l2, l3, l4, l5, l6));
 	}
 
 
-	private List<Usuario> getUsuario() {
+	//private List<Usuario> getUsuario() {
 		// TODO Auto-generated method stub
-		return null;
-	}
+		//return null;
+	//}
 
 }
