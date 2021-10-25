@@ -2,6 +2,10 @@ package com.Henrique.cocoBambu.dtos;
 
 import java.io.Serializable;
 
+import javax.validation.constraints.NotEmpty;
+
+import org.hibernate.validator.constraints.Length;
+
 import com.Henrique.cocoBambu.domain.Categoria;
 
 public class CategoriaDTO implements Serializable {
@@ -9,7 +13,12 @@ public class CategoriaDTO implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
 	private Integer id;
+	@NotEmpty(message = "Campo NOME é requerido")
+	@Length(min = 3, max = 100, message = "O campo NOME deve ter entre 3 a 100 caracteris")
 	private String nome;
+	
+	@NotEmpty(message = "Campo DESCRICAO é requerido")
+	@Length(min = 3, max = 200, message = "O campo DESCRICAO deve ter entre 3 a 200 caracteris")
 	private String descricao;
 	
 	public CategoriaDTO() {
