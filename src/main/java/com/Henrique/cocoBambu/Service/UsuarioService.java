@@ -29,4 +29,17 @@ public class UsuarioService {
 		categoriaService.findById(id_cat);
 		return repository.findAllByCategoria(id_cat);
 	}
+
+	public Usuario update(Integer id, Usuario obj) {
+		Usuario newObj = findById(id);
+		updateData(newObj, obj);
+		return repository.save(newObj);
+	}
+
+	private void updateData(Usuario newObj, Usuario obj) {
+		newObj.setTitulo(obj.getTitulo());
+		newObj.setNome_autor(obj.getNome_autor());
+		newObj.setTexto(obj.getTexto());
+		
+	}
 }
