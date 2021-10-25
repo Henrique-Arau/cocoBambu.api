@@ -13,7 +13,7 @@ import javax.persistence.ManyToOne;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
-public class Livro implements Serializable{
+public class Usuario implements Serializable{
 	
 	private static final long serialVersionUID = 1L;
 
@@ -26,17 +26,19 @@ public class Livro implements Serializable{
 	private String nome_autor;
 	private String texto;
 	
+	
 	@JsonIgnore
     @ManyToOne
     @JoinColumn(name = "categoria_id")
 	private Categoria categoria;
 
-	public Livro() {
+	public Usuario() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public Livro(Integer id, String titulo, String nome_autor, String texto, Categoria categoria) {
+	
+	public Usuario(Integer id, String titulo, String nome_autor, String texto, Categoria categoria) {
 		super();
 		this.id = id;
 		this.titulo = titulo;
@@ -77,6 +79,7 @@ public class Livro implements Serializable{
 		this.texto = texto;
 	}
 
+	
 	public Categoria getCategoria() {
 		return categoria;
 	}
@@ -98,7 +101,7 @@ public class Livro implements Serializable{
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Livro other = (Livro) obj;
+		Usuario other = (Usuario) obj;
 		return Objects.equals(id, other.id);
 	}
 

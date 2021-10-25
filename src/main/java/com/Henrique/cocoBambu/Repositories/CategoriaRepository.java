@@ -5,6 +5,7 @@ import org.springframework.stereotype.Repository;
 
 import com.Henrique.cocoBambu.domain.Categoria;
 
+
 @Repository
 public interface CategoriaRepository extends JpaRepository<Categoria, Integer>{
 

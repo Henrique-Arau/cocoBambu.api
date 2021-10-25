@@ -11,20 +11,22 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
-@Entity
-public class Categoria implements Serializable{
-	
-	private static final long serialVersionUID = 1L;
 
-	private static final long serialVersionVID = 1L;
+@Entity
+public class Categoria<Usuarios, usuario> implements Serializable {
+
+	private static final long serialVersionUID = 1L;
 	
+	private static final long serialVersionVID = 1L;
+
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	private String nome;
 	private String descricao;
 	@OneToMany(mappedBy = "categoria")
-	private List<Livro> livros = new ArrayList<>();
+	private List<Usuario> usuarios = new ArrayList<>();
 
 	public Categoria() {
 		super();
@@ -62,12 +64,12 @@ public class Categoria implements Serializable{
 		this.descricao = descricao;
 	}
 
-	public List<Livro> getLivros() {
-		return livros;
+	public List<usuario> getUsuarios(List<usuario> usuario) {
+		return usuario;
 	}
 
-	public void setLivros(List<Livro> livros) {
-		this.livros = livros;
+	public void setUsuarios(List<Usuario> usuarios) {
+		this.usuarios = usuarios;
 	}
 
 	@Override
@@ -90,7 +92,8 @@ public class Categoria implements Serializable{
 	public static long getSerialversionvid() {
 		return serialVersionVID;
 	}
-	
+
+
 	
 
 }
