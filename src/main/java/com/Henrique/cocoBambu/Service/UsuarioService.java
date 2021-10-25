@@ -1,5 +1,6 @@
 package com.Henrique.cocoBambu.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,10 +15,18 @@ public class UsuarioService {
 	
 	@Autowired
 	private UsuarioRepository repository;
+	
+	@Autowired
+	private CategoriaService categoriaService;
  
 	public Usuario findById(Integer id) {
 		Optional<Usuario> obj = repository.findById(id);
 		return obj.orElseThrow(() -> new ObjectNotFoundException(
 				"Objeto não encontrado! Id: " + id + ", Tipo: " + Usuario.class.getName()));
+	}
+
+	public List<Usuario> findAll(Integer id_cat) {
+		categoriaService.findById(id_cat);
+		return repository.findAllByCategoria(id_cat);
 	}
 }
