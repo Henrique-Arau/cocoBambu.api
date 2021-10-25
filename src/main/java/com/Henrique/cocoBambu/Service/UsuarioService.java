@@ -50,4 +50,10 @@ public class UsuarioService {
 		obj.setCategoria(cat);
 		return repository.save(obj);
 	}
+
+	public void delete(Integer id) {
+		Usuario obj = findById(id);
+		repository.delete(obj);
+		
+	}
 }
