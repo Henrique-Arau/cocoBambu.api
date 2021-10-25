@@ -29,14 +29,13 @@ public class CategoriaResource {
 	private CategoriaService service;
 	
 	
-	@SuppressWarnings("rawtypes")
+	
 	@GetMapping(value = "/{id}")
 	public ResponseEntity<Categoria> findById(@PathVariable Integer id) {
 		Categoria obj = service.findById(id);
 		return ResponseEntity.ok().body(obj);
 	}
 	
-	@SuppressWarnings("rawtypes")
 	@GetMapping
 	public ResponseEntity<List<CategoriaDTO>> findAll(){
 		List<Categoria> list = service.findAll();
@@ -44,7 +43,7 @@ public class CategoriaResource {
 		return ResponseEntity.ok().body(listDTO);
 	}
 	
-	@SuppressWarnings("rawtypes")
+	
 	@PostMapping
 	public ResponseEntity<Categoria> create(@RequestBody Categoria obj) {
 		obj = service.create(obj);

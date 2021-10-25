@@ -6,7 +6,7 @@ import org.springframework.stereotype.Repository;
 import com.Henrique.cocoBambu.domain.Categoria;
 
 
-@SuppressWarnings("rawtypes")
+
 @Repository
 public interface CategoriaRepository extends JpaRepository<Categoria, Integer>{
 

@@ -77,7 +77,7 @@ public class Categoria<Usuarios, usuario> implements Serializable {
 		return Objects.hash(id);
 	}
 
-	@SuppressWarnings("rawtypes")
+	
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)

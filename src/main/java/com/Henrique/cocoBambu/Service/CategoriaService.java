@@ -19,19 +19,19 @@ public class CategoriaService {
 	private CategoriaRepository repository;
 	
 	
-	@SuppressWarnings("rawtypes")
+	
 	public Categoria findById(Integer id) {
 		Optional<Categoria> obj = repository.findById(id);
 		return obj.orElseThrow(() -> new ObjectNotFoundException(
 				"Objeto nâo encontrado! Id: " + id + ", Tipo:" + Categoria.class.getName()));
 	}
 	
-	@SuppressWarnings("rawtypes")
+	
 	public List<Categoria> findAll() {
 		return repository.findAll();
 	}
 	
-	@SuppressWarnings("rawtypes")
+	
 	public Categoria create(Categoria obj) {
 		obj.setId(null);
 		return repository.save(obj);
@@ -46,7 +46,11 @@ public class CategoriaService {
 
 	public void delete(Integer id) {
 		findById(id);
-		repository.deleteById(id);
+		try {
+			repository.deleteById(id);
+		} catch (Exception e) {
+			throw new com.Henrique.cocoBambu.Service.exceptions.DataIntegrityViolationException("Categoria não pode ser deletado! Possui usuarios associado");
+		}
 		
 	}
 
