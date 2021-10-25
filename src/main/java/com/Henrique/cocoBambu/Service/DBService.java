@@ -21,6 +21,7 @@ public class DBService {
 	private UsuarioRepository usuarioRepository;
 	
 	
+	@SuppressWarnings("rawtypes")
 	public void instanciaBaseDeDados() {
 		
 		Categoria cat1 = new Categoria(null, "Informatica", "Livros de ti");

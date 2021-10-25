@@ -17,6 +17,7 @@ public class CategoriaDTO implements Serializable {
 		// TODO Auto-generated constructor stub
 	}
 
+	@SuppressWarnings("rawtypes")
 	public CategoriaDTO(Categoria obj) {
 		super();
 		this.id = obj.getId();

@@ -27,6 +27,7 @@ public class Usuario implements Serializable{
 	private String texto;
 	
 	
+	@SuppressWarnings("rawtypes")
 	@JsonIgnore
     @ManyToOne
     @JoinColumn(name = "categoria_id")
@@ -38,6 +39,7 @@ public class Usuario implements Serializable{
 	}
 
 	
+	@SuppressWarnings("rawtypes")
 	public Usuario(Integer id, String titulo, String nome_autor, String texto, Categoria categoria) {
 		super();
 		this.id = id;
@@ -80,10 +82,12 @@ public class Usuario implements Serializable{
 	}
 
 	
+	@SuppressWarnings("rawtypes")
 	public Categoria getCategoria() {
 		return categoria;
 	}
 
+	@SuppressWarnings("rawtypes")
 	public void setCategoria(Categoria categoria) {
 		this.categoria = categoria;
 	}
